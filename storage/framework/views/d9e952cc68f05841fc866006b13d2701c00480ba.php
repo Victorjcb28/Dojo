@@ -7,13 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
-    {!!Html::style('css/bootstrap.min.css')!!}
+    <?php echo Html::style('css/bootstrap.min.css'); ?>
 
-    {!!Html::style('css/metisMenu.min.css')!!}
-    {!!Html::style('css/sb-admin-2.css')!!}
-    {!!Html::style('css/font-awesome.min.css')!!}
-    {!!Html::style('css/jquery.steps.css')!!}
-    {!! Html::script('https://code.jquery.com/jquery-3.1.0.min.js') !!}
+
+    <?php echo Html::style('css/metisMenu.min.css'); ?>
+
+    <?php echo Html::style('css/sb-admin-2.css'); ?>
+
+    <?php echo Html::style('css/font-awesome.min.css'); ?>
+
+    <?php echo Html::style('css/jquery.steps.css'); ?>
+
+    <?php echo Html::script('https://code.jquery.com/jquery-3.1.0.min.js'); ?>
+
 
 
 </head>
@@ -38,13 +44,13 @@
         <ul class="nav navbar-top-links navbar-right">
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    {!!Auth::user()->name!!}<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    <?php echo Auth::user()->name; ?><i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> Ajustes</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="{!!URL::to('/logout')!!}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <li><a href="<?php echo URL::to('/logout'); ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                     </li>
                 </ul>
             </li>
@@ -58,10 +64,10 @@
                         <a href="#"><i class="fa fa-users fa-fw"></i> Usuario<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{!!URL::to('/usuario/create')!!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                <a href="<?php echo URL::to('/usuario/create'); ?>"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                             </li>
                             <li>
-                                <a href="{!!URL::to('/usuario')!!}"><i class='fa fa-list-ol fa-fw'></i> Usuarios</a>
+                                <a href="<?php echo URL::to('/usuario'); ?>"><i class='fa fa-list-ol fa-fw'></i> Usuarios</a>
                             </li>
 
                         </ul>
@@ -71,7 +77,7 @@
                         <a href="#"><i class="fa fa-film fa-fw"></i> Atletas<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{!!URL::to('/atleta/create')!!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                <a href="<?php echo URL::to('/atleta/create'); ?>"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                             </li>
                             <li>
                                 <a href="#"><i class='fa fa-list-ol fa-fw'></i> Atletas</a>
@@ -83,10 +89,10 @@
                         <a href="#"><i class="fa fa-child fa-fw"></i> Genero<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{!!URL::to('/genero/create')!!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                <a href="<?php echo URL::to('/genero/create'); ?>"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                             </li>
                             <li>
-                                <a href="{!!URL::to('/genero')!!}"><i class='fa fa-list-ol fa-fw'></i> Generos</a>
+                                <a href="<?php echo URL::to('/genero'); ?>"><i class='fa fa-list-ol fa-fw'></i> Generos</a>
                             </li>
                         </ul>
                     </li>
@@ -98,21 +104,29 @@
     </nav>
 
     <div id="page-wrapper" style="min-height: 1 000px;">
-        @yield('content')
+        <?php echo $__env->yieldContent('content'); ?>
     </div>
 
 </div>
 
 
 
-{!!Html::script('js/script.js')!!}
-{!!Html::script('js/script2.js')!!}
-{!!Html::script('js/bootstrap.min.js')!!}
-{!!Html::script('js/metisMenu.min.js')!!}
-{!!Html::script('js/sb-admin-2.js')!!}
-{!!Html::script('css/modernizr-2.6.2.min.js')!!}
-{!!Html::script('css/jquery.cookie-1.3.1.js')!!}
-{!!Html::script('css/jquery.steps.js')!!}
+<?php echo Html::script('js/script.js'); ?>
+
+<?php echo Html::script('js/script2.js'); ?>
+
+<?php echo Html::script('js/bootstrap.min.js'); ?>
+
+<?php echo Html::script('js/metisMenu.min.js'); ?>
+
+<?php echo Html::script('js/sb-admin-2.js'); ?>
+
+<?php echo Html::script('css/modernizr-2.6.2.min.js'); ?>
+
+<?php echo Html::script('css/jquery.cookie-1.3.1.js'); ?>
+
+<?php echo Html::script('css/jquery.steps.js'); ?>
+
 
 
 </body>

@@ -53,7 +53,7 @@
 
                 <div class="col-sm-6 col-sm-offset-3 form-box">
                     <div class="form-top">
-                        @include('alerts.errors')
+                        <?php echo $__env->make('alerts.errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                         <div class="form-top-left">
                             <h3>Inicio de Sesion</h3>
 
@@ -63,19 +63,26 @@
                         </div>
                     </div>
                     <div class="form-bottom">
-                        {!!Form::open(['route'=>'log.store','method'=>'POST'])!!}
+                        <?php echo Form::open(['route'=>'log.store','method'=>'POST']); ?>
+
 
                         <div class="form-group">
-                            {!! Form::label('Nombre:') !!}
-                            {!! Form::text('name',null,['class'=>'form-control','placeholder'=>'Ingresa tu Nombre']) !!}
+                            <?php echo Form::label('Nombre:'); ?>
+
+                            <?php echo Form::text('name',null,['class'=>'form-control','placeholder'=>'Ingresa tu Nombre']); ?>
+
                         </div>
                         <div class="form-group">
-                            {!! Form::label('Password:') !!}
-                            {!! Form::password('password',['class'=>'form-control','placeholder'=>'Ingresa tu Clave']) !!}
+                            <?php echo Form::label('Password:'); ?>
+
+                            <?php echo Form::password('password',['class'=>'form-control','placeholder'=>'Ingresa tu Clave']); ?>
+
                         </div>
 
-                        {!! Form::Submit('Entrar',['class'=>'btn ']) !!}
-                        {!! Form::close() !!}
+                        <?php echo Form::Submit('Entrar',['class'=>'btn ']); ?>
+
+                        <?php echo Form::close(); ?>
+
                     </div>
                 </div>
             </div>
