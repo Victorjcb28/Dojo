@@ -1,6 +1,6 @@
 <?php
 
-namespace Prueba\Http\Middleware;
+namespace Dojo\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Prueba\Providers;
+namespace Dojo\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

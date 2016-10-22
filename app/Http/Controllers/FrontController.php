@@ -1,10 +1,10 @@
 <?php
 
-namespace Prueba\Http\Controllers;
+namespace Dojo\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Prueba\Http\Requests;
+use Dojo\Http\Requests;
 
 class FrontController extends Controller
 {
@@ -17,9 +17,4 @@ class FrontController extends Controller
     public function admin(){
         return view('admin.index');
     }
-
-
 }
-
-
-

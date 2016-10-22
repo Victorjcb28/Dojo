@@ -1,6 +1,6 @@
 <?php
 
-namespace Prueba;
+namespace Dojo;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,6 +13,6 @@ class estudiantes extends Model
 
     public function representante()
     {
-        return $this->hasOne('App\estudiante_representantes');
+        return $this->hasOne('Dojo\estudiante_representantes');
     }
 }
