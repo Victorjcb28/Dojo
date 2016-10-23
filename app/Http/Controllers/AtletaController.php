@@ -29,11 +29,18 @@ class AtletaController extends Controller
 
         $estudiantes=new estudiantes;
         $estudiantes->name= $request->name;
+        $estudiantes->apellido= $request->apellido;
+        $estudiantes->cedula= $request->cedula;
+        $estudiantes->direccion= $request->direccion;
+        $estudiantes->kyu= $request->kyu;
         $estudiantes->save();
 
         $estudiante_representantes=new estudiante_representantes;
         $estudiante_representantes->estudiante_id=$estudiantes->id;
-        $estudiante_representantes->name= $request->name;//Recordar cambiar el name al nombre del representante
+        $estudiante_representantes->name1= $request->name1;
+        $estudiante_representantes->apellido1= $request->apellido1;
+        $estudiante_representantes->cedula1= $request->cedula1;
+        $estudiante_representantes->direccion1= $request->direccion1;
         $estudiante_representantes->save();
     }
 }
