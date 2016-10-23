@@ -16,6 +16,10 @@ class CreateEstudiantesTable extends Migration
         Schema::create('estudiantes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('apellido');
+            $table->string('cedula');//cambiar tipo
+            $table->string('direccion');
+            $table->string('kyu');
             $table->timestamps();
         });
     }

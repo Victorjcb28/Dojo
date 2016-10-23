@@ -15,7 +15,10 @@ class CreateEstudianteRepresentantesTable extends Migration
     {
         Schema::create('estudiante_representantes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name1');
+            $table->string('apellido1');
+            $table->string('cedula1');//cambiar tipo
+            $table->string('direccion1');
             $table->integer('estudiante_id')->unsigned();
             $table->foreign('estudiante_id')->references('id')->on('estudiantes');
             $table->timestamps();
