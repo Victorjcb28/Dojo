@@ -16,7 +16,8 @@ class AtletaController extends Controller
     public function index()
 
     {
-        return "listo";
+        $atletas = estudiantes::all();
+        return view('atleta.index',compact('atletas'));
 
     }
 

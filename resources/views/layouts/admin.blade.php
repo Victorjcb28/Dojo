@@ -74,7 +74,7 @@
                                 <a href="{!!URL::to('/atleta/create')!!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                             </li>
                             <li>
-                                <a href="#"><i class='fa fa-list-ol fa-fw'></i> Atletas</a>
+                                <a href="{!!URL::to('/atleta')!!}"><i class='fa fa-list-ol fa-fw'></i> Atletas</a>
                             </li>
                         </ul>
                     </li>
