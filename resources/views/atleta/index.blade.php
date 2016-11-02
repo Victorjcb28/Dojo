@@ -1,54 +1,46 @@
 @extends('layouts.admin')
 @section('content')
-<div class="row">
-<div class="col-md-9 col-md-offset-1">
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
 
-    <div class="panel panel-default">
+    <div class="page-header">
+        <h2>Atletas</h2>
 
-        <div class="panel-heading">Atletas</div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>
-                        <a class="btn btn-primary" href="" role="button">
-                            Nuevo Atleta
-                        </a>
-                    </p>
-                    <p>
-                        Hay {{count($atletas)}} atletas
-                    </p>
+    </div>
 
-                </div>
-                <div class="col-md-6">
-                    <form class="navbar-form navbar-left pull-right" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <p>
+                    <a class="btn btn-primary" href="" role="button">
+                        Nuevo Atleta
+                    </a>
+                </p>
+                <p>
+                    Hay {{count($atletas)}} atletas
+                </p>
+
             </div>
-
         </div>
-
-        <!-- Table -->
-        <table class="table">
+        <table class="table table-bordered" id="table">
             <thead>
             <th>Nombre</th>
-            <th>Clave</th>
-
-
+            <th>Apellido</th>
             </thead>
+            <tbody>
             @foreach($atletas as $atleta)
-                <tbody>
-                <td>{{ $atleta -> name}}</td>
-                <td>{{ $atleta -> apellido}}</td>
-
-                </tbody>
+                <tr>
+                    <td>{{ $atleta -> name}}</td>
+                    <td>{{ $atleta -> apellido}}</td>
+                </tr>
             @endforeach
+            </tbody>
         </table>
     </div>
-</div>
 
-</div>
+    <script src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    $('#table').DataTable();
+    });
+    </script>
 @endsection

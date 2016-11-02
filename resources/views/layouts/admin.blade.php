@@ -14,11 +14,13 @@
     {!!Html::style('css/font-awesome.min.css')!!}
     {!!Html::style('css/jquery.steps.css')!!}
     {!! Html::script('https://code.jquery.com/jquery-3.1.0.min.js') !!}
+    {!! Html::script('http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js') !!}
+
 
 
 </head>
 
-<body>
+<body id="app">
 
 <div id="wrapper">
 
