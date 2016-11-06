@@ -85,10 +85,10 @@
                         <a href="#"><i class="fa fa-child fa-fw"></i> Genero<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{!!URL::to('/genero/create')!!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                <a href="{!!URL::to('/pdf/invoice')!!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                             </li>
                             <li>
-                                <a href="{!!URL::to('/genero')!!}"><i class='fa fa-list-ol fa-fw'></i> Generos</a>
+                                <a href="{!!URL::to('/pdf')!!}"><i class='fa fa-list-ol fa-fw'></i> Generos</a>
                             </li>
                         </ul>
                     </li>

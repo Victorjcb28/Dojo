@@ -15,4 +15,12 @@ class estudiantes extends Model
     {
         return $this->hasOne('Dojo\estudiante_representantes');
     }
+    public function scopeName($query,$name)
+    {
+        if (trim($name)!="")
+        {
+            $query->where(\DB::raw("CONCAT(name,'',apellido)"),"LIKE","%$name%");
+        }
+
+    }
 }

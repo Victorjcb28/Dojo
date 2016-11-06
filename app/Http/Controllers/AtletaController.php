@@ -13,10 +13,11 @@ use Dojo\Http\Controllers\Controller;
 
 class AtletaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
 
     {
-        $atletas = estudiantes::all();
+        $atletas = estudiantes::all()->take(10);
+        //$atletas = estudiantes::name($request->get('name'))->paginate();
         return view('atleta.index',compact('atletas'));
 
     }
