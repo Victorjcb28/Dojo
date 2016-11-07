@@ -45,4 +45,12 @@ class AtletaController extends Controller
         $estudiante_representantes->direccion1= $request->direccion1;
         $estudiante_representantes->save();
     }
+    public function pdf()
+    {
+
+
+        $users= estudiantes::all();
+        $pdf = \PDF::loadView('usuario.pdf',['users'=>$users]);
+        return $pdf->download('pruebapdf.pdf');
+    }
 }
