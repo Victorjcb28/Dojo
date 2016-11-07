@@ -55,7 +55,9 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        //
+        $users= User::all();
+        $pdf = \PDF::loadView('usuario.pdf',['users'=>$users]);
+        return $pdf->download('pruebapdf.pdf');
     }
     /**
      * Show the form for editing the specified resource.
@@ -93,5 +95,12 @@ class UsuarioController extends Controller
     {
         User::destroy($id);
         return Redirect::to('/usuario');
+    }
+
+    public function pdf()
+    {
+        $users= User::all();
+        $pdf = \PDF::loadView('usuario.pdf',['users'=>$users]);
+        return $pdf->download('pruebapdf.pdf');
     }
 }

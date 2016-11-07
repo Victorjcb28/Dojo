@@ -22,15 +22,15 @@
         </tr>
         </thead>
         @foreach($users as $user)
-        <tbody>
-        <tr class="success">
-            <td>{{$user->name}}</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-        </tr>
+            <tbody>
+            <tr class="success">
+                <td>{{$user->name}}</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+            </tr>
 
-        </tbody>
-            @endforeach
+            </tbody>
+        @endforeach
     </table>
 </div>
 
