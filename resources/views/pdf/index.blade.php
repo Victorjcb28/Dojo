@@ -10,11 +10,12 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Task', 'Hours per Day'],
-                ['1',     11],
-                ['2',      2],
-                ['3',  2],
-                ['4', 2],
-                ['5',    7]
+                    @foreach($atletas as $atleta)
+
+                    ['{{ $atleta -> name}}',2],
+
+
+            @endforeach
             ]);
 
             var options = {
