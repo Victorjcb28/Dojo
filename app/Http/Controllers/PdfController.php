@@ -9,9 +9,7 @@ class PdfController extends Controller
 {
     public function index()
     {
-        $users= User::all();
-        $pdf = \PDF::loadView('pdf.index',['users'=>$users]);
-        return $pdf->download('pruebapdf.pdf');
+        return view('pdf.index');
     }
     public function show($id)
     {

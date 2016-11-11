@@ -1,40 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.admin')
+@section('content')
+<html>
 <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['1',     11],
+                ['2',      2],
+                ['3',  2],
+                ['4', 2],
+                ['5',    7]
+            ]);
+
+            var options = {
+                title: 'Prueba 1'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    </script>
 </head>
 <body>
-
-<div class="container">
-    <h2>Lista de Usuarios</h2>
-    <p>Contextual classes can be used to color table rows or table cells. The classes that can be used are: .active, .success, .info, .warning, and .danger.</p>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Email</th>
-        </tr>
-        </thead>
-        @foreach($users as $user)
-        <tbody>
-        <tr class="success">
-            <td>{{$user->name}}</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-        </tr>
-
-        </tbody>
-            @endforeach
-    </table>
-</div>
-
+<div id="piechart" style="width: 900px; height: 500px;"></div>
 </body>
 </html>
-
-
+@endsection
