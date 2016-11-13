@@ -26,6 +26,12 @@ class AtletaController extends Controller
     {
         return view('atleta.create');
     }
+    public function show()
+    {
+        $atletas = estudiantes::all();
+        return view('atleta.buscar',compact('atletas'));
+
+    }
 
     public function  store(Request $request){
 

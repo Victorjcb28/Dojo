@@ -12,7 +12,7 @@
                 ['Task', 'Hours per Day'],
                     @foreach($atletas as $atleta)
 
-                    ['{{ $atleta -> name}}',2],
+                    ['{{ $atleta -> name}}',{{count($atletas)}}],
 
 
             @endforeach

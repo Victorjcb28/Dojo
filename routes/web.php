@@ -16,7 +16,7 @@ Route::get('admin','FrontController@admin');
 
 Route::resource('log','LogController');
 Route::resource('usuario','UsuarioController');
-Route::get('usuario','UsuarioController@pdf');
+
 Route::resource('atleta','AtletaController');
 Route::resource('buscara','BuscarAController');
 

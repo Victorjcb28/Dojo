@@ -97,10 +97,10 @@ class UsuarioController extends Controller
         return Redirect::to('/usuario');
     }
 
-    public function pdf()
+    /*public function pdf()
     {
         $users= User::all();
         $pdf = \PDF::loadView('usuario.pdf',['users'=>$users]);
         return $pdf->download('pruebapdf.pdf');
-    }
+    }*/
 }

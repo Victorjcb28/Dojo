@@ -13,6 +13,8 @@
     {!!Html::style('css/sb-admin-2.css')!!}
     {!!Html::style('css/font-awesome.min.css')!!}
     {!!Html::style('css/jquery.steps.css')!!}
+    {!!Html::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')!!}
+
     {!! Html::script('https://code.jquery.com/jquery-3.1.0.min.js') !!}
     {!! Html::script('http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js') !!}
 
@@ -76,7 +78,10 @@
                                 <a href="{!!URL::to('/atleta/create')!!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                             </li>
                             <li>
-                                <a href="{!!URL::to('/atleta')!!}"><i class='fa fa-list-ol fa-fw'></i> Atletas</a>
+                                <a href="{!!URL::to('/atleta/buscar')!!}"><span class="glyphicon glyphicon-search" ></span> Atletas</a>
+                            </li>
+                            <li>
+                                <a href="{!!URL::to('/atleta')!!}"><span class="glyphicon glyphicon-print" ></span> Imprimir Lista</a>
                             </li>
                         </ul>
                     </li>
@@ -115,6 +120,8 @@
 {!!Html::script('css/modernizr-2.6.2.min.js')!!}
 {!!Html::script('css/jquery.cookie-1.3.1.js')!!}
 {!!Html::script('css/jquery.steps.js')!!}
+{!!Html::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')!!}
+
 
 
 </body>
