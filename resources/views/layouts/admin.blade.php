@@ -78,7 +78,7 @@
                                 <a href="{!!URL::to('/atleta/create')!!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                             </li>
                             <li>
-                                <a href="{!!URL::to('/atleta/buscar')!!}"><span class="glyphicon glyphicon-search" ></span> Atletas</a>
+                                <a href="{!!URL::to('/atleta/edit')!!}"><span class="glyphicon glyphicon-search" ></span> Atletas</a>
                             </li>
                             <li>
                                 <a href="{!!URL::to('/atleta')!!}"><span class="glyphicon glyphicon-print" ></span> Imprimir Lista</a>

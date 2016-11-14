@@ -32,6 +32,11 @@ class AtletaController extends Controller
         return view('atleta.buscar',compact('atletas'));
 
     }
+    public function edit($id)
+    {
+        $atleta=estudiantes::find($id);
+        return view('atleta.edit', ['atleta'=>$atleta]);
+    }
 
     public function  store(Request $request){
 
