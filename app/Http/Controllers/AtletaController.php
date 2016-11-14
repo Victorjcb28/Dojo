@@ -35,6 +35,7 @@ class AtletaController extends Controller
     public function edit($id)
     {
         $atleta=estudiantes::find($id);
+        $atletas=estudiante_representantes::find($id);
         return view('atleta.edit', ['atleta'=>$atleta]);
     }
 

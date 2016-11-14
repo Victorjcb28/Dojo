@@ -12,23 +12,23 @@
     <table id="example" class="display" width="100%" cellspacing="0">
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Cedula</th>
+            <th>Direccion</th>
+            <th>Kyu</th>
+            <th>Operacion</th>
         </tr>
         </thead>
         <tfoot>
 
         <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Cedula</th>
+            <th>Direccion</th>
+            <th>Kyu</th>
+            <th>Operacion</th>
         </tr>
 
         </tfoot>
@@ -36,12 +36,13 @@
         @foreach($atletas as $atleta)
         <tr data-id="{{$atleta->id}}">
             <td>{{$atleta->name}}</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
+            <td>{{$atleta->apellido}}</td>
+            <td>{{$atleta->cedula}}</td>
+            <td>{{$atleta->direccion}}</td>
+            <td>{{$atleta->kyu}}</td>
             <td>
-                {!! link_to_route('atleta.edit',$title='Editar', $parameters=$atleta->id, $attributes=['class'=>'btn btn-primary'] ) !!}
+                {!! link_to_route('atleta.edit',$title='Ver mas', $parameters=$atleta->id, $attributes=['class'=>'btn btn-primary'] ) !!}
+
             </td>
         </tr>
         @endforeach

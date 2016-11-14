@@ -1,20 +1,77 @@
 @extends('layouts.admin')
 @section('content')
-    <table class="table">
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css">
+
+
+    <div class="page-header">
+        <h2>Usuario</h2>
+
+    </div>
+
+    <table id="example" class="display" width="100%" cellspacing="0">
         <thead>
-        <th>Nombre</th>
-        <th>Clave</th>
+        <tr>
+            <th>Nombre</th>
 
+            <th>Operacion</th>
+        </tr>
         </thead>
-        @foreach($users as $user)
-            <tbody>
-            <td>{{ $user -> name}}</td>
-            <td></td>
-            <td>
-                {!! link_to_route('usuario.edit',$title='Editar', $parameters=$user->id, $attributes=['class'=>'btn btn-primary'] ) !!}
+        <tfoot>
 
-            </td>
-            </tbody>
+        <tr>
+            <th>Nombre</th>
+
+            <th>Operacion</th>
+        </tr>
+
+        </tfoot>
+        <tbody>
+        @foreach($users as $user)
+            <tr data-id="{{$user->id}}">
+                <td>{{$user->name}}</td>
+                <td>
+                    {!! link_to_route('usuario.edit',$title='Ver mas', $parameters=$user->id, $attributes=['class'=>'btn btn-primary'] ) !!}
+
+                </td>
+            </tr>
         @endforeach
+        </tbody>
     </table>
+
+
+
+    <script src="http://code.jquery.com/jquery-1.12.3.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+
+    <script>
+
+
+        $(document).ready(function() {
+
+            $('.btn btn-primary').click(function () {
+                var row= $(this).parents('tr');
+                var id= row.data('id');
+                var form= $('#form-buscar');
+                var url=form.attr('action').replace(':USER_ID',id);
+                var data= form.serialize();
+                alert(id);
+
+            } );
+            $('#example').DataTable( {
+                dom: 'Bfrtip',
+                buttons: [
+                    'print'
+                ]
+            } );
+        } );
+
+    </script>
 @endsection
+
+
+
+
