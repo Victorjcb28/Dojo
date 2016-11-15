@@ -34,11 +34,25 @@ class AtletaController extends Controller
     }
     public function edit($id)
     {
-        $atleta=estudiantes::find($id);
         $atletas=estudiante_representantes::find($id);
-        return view('atleta.edit', ['atleta'=>$atleta]);
-    }
+        $atleta=estudiantes::find($id);
 
+        return view('atleta.edit', ['atleta'=>$atleta],['atletas'=>$atletas]);
+
+
+    }
+    public function update(Request $request, $id)
+    {
+        $atleta=estudiantes::find($id);
+        $atleta->fill($request->all());
+        $atleta->save();
+
+        $atletas=estudiante_representantes::find($id);
+        $atletas->fill($request->all());
+        $atletas->save();
+
+        return Redirect::to('/atleta');
+    }
     public function  store(Request $request){
 
         $estudiantes=new estudiantes;

@@ -1,7 +1,8 @@
 @extends('layouts.admin')
 @section('content')
 
-    {!!Form::model($atleta,['route'=>['usuario.update',$atleta],'method'=>'PUT'])!!}
+    {!!Form::model($atleta,['route'=>['atleta.update',$atleta],'method'=>'PUT'])!!}
+
     <div class="row">
         <div class="col-md-6 ">
             <h1> Datos del Atleta</h1>
@@ -27,7 +28,7 @@
             </div>
 
         </div>
-
+        {!!Form::model($atletas,['route'=>['atleta.edit',$atleta],'method'=>'PUT'])!!}
         <div class="col-md-6 ">
             <h1> Datos del Representante</h1>
             <div class="form-group">
@@ -51,6 +52,7 @@
 
 
 
+
     </div>
 
     <div class="row">
@@ -61,7 +63,7 @@
             {!! Form::Reset('Eliminar',['class'=>'btn btn-danger']) !!}
         </div>
     </div>
-
+    {!! Form::close() !!}
     {!! Form::close() !!}
 
 
