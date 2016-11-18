@@ -12,15 +12,11 @@ class PdfController extends Controller
 {
     public function index(Request $request)
     {
-        /*$atletas= estudiante_representantes::
-        select('estudiantes.name','estudiante_representantes.name1')
-            ->join('estudiantes','estudiantes.id','=','estudiante_representantes.estudiante_id')
-            ->get();*/
-        $atletas = DB::table('estudiantes')
-            ->join('estudiante_representantes', 'estudiantes.id', '=', 'estudiante_representantes.estudiante_id')
-
-            ->select('estudiantes.name', 'estudiante_representantes.name1')
+        $atletas= estudiantes::
+        select('estudiantes.name','medallas.oro','medallas.plata','medallas.bronce')
+            ->join('medallas','estudiantes.id','=','medallas.estudiante_id')
             ->get();
+
         return view('pdf.index',['atletas'=>$atletas]);
     }
     public function show($id)

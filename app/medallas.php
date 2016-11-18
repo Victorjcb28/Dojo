@@ -4,12 +4,13 @@ namespace Dojo;
 
 use Illuminate\Database\Eloquent\Model;
 
-class estudiante_representantes extends Model
+class medallas extends Model
 {
-    protected $table='estudiante_representantes';
+    protected $table='medallas';
     protected $fillable = [
-        'name1','apellido1','cedula1','direccion1',
+        'oro','pLata','bronce',
     ];
+
     public function estudiantes()
     {
         return $this->belongsTo('Dojo\estudiantes');

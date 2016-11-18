@@ -15,6 +15,10 @@ class estudiantes extends Model
     {
         return $this->hasOne('Dojo\estudiante_representantes');
     }
+    public function medallas()
+    {
+        return $this->hasOne('Dojo\medallas');
+    }
     public function scopeName($query,$name)
     {
         if (trim($name)!="")

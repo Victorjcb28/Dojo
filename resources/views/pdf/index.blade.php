@@ -12,14 +12,19 @@
                 ['Task', 'Hours per Day'],
                     @foreach($atletas as $atleta)
 
-                    ['{{ $atleta -> name}}',{{count($atletas)}}],
+                    ['oro',{{$atleta -> oro}}],
+                ['plata',{{$atleta -> plata}}],
+                ['bronce',{{$atleta -> bronce}}],
+
 
 
             @endforeach
             ]);
 
             var options = {
-                title: 'Prueba 1'
+                title: 'Medallas',
+
+                colors: ['yellow', 'gray', '#cd7f32']
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('piechart'));
