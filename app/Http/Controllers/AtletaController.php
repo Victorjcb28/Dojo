@@ -79,4 +79,20 @@ class AtletaController extends Controller
         $pdf = \PDF::loadView('usuario.pdf',['users'=>$users]);
         return $pdf->download('pruebapdf.pdf');
     }
+
+    public function btc()
+    {
+
+            function getprice($url){
+                $decode=file_get_contents($url);
+                return json_decode($decode,true);
+            }
+            $btcUSD=getprice('https://btc-e.com/api/2/btc_usd/ticker');
+            $btcprice=$btcUSD["ticker"]["last"];
+
+
+        return $btcprice;
+
+
+    }
 }

@@ -105,8 +105,8 @@
             <div class="panel with-nav-tabs panel-default">
                 <div class="panel-heading">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab1default" data-toggle="tab">Terminos del Comercio</a></li>
-                        <li><a href="#tab2default" data-toggle="tab">Usuario</a></li>
+                        <li class="active"><a href="#tab1default" data-toggle="tab">Usuario</a></li>
+                        <li><a href="#tab2default" data-toggle="tab">Terminos del Comercio</a></li>
 
 
                     </ul>

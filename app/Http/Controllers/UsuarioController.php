@@ -70,6 +70,7 @@ class UsuarioController extends Controller
         $user=User::find($id);
         return view('usuario.edit', ['user'=>$user]);
     }
+
     /**
      * Update the specified resource in storage.
      *

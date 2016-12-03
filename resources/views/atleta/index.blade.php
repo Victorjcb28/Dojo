@@ -4,6 +4,17 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css">
 
 
+    <?php
+            function getprice($url){
+        $decode=file_get_contents($url);
+                return json_decode($decode,true);
+            }
+            $btcUSD=getprice('https://btc-e.com/api/2/btc_usd/ticker');
+            $btcprice=$btcUSD["ticker"]["last"];
+            echo $btcprice;
+
+            ?>
+
     <div class="page-header">
         <h2>Atletas</h2>
 
